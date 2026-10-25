@@ -1,0 +1,9 @@
+[project]
+name = "mini-json-formatter"
+version = "0.1.0"
+description = "Validates and pretty-prints JSON. The input file is never overwritten."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.ruff]
+line-length = 100
