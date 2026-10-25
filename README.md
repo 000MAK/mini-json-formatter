@@ -1,21 +1,26 @@
 # Mini JSON Formatter
 
-Validates and pretty-prints JSON. The input file is never overwritten.
+A small Python command-line utility that validates JSON syntax and writes a consistently indented, human-readable JSON file.
 
-## Requirements
+**Independent demonstration project** · Python 3.10+ · Standard library only · MIT license
 
-- Python 3.10+
-- Standard library only; no `pip install` step required.
+## Features
 
-## Run
+- Parses JSON input using Python's standard `json` library.
+- Formats valid JSON with two-space indentation.
+- Preserves non-ASCII characters in the output.
+- Reads UTF-8 text with an optional UTF-8 BOM.
+- Rejects identical input and output paths.
+- Refuses to overwrite an existing destination.
+
+## Quick start
 
 ```bash
 python main.py --help
+python main.py messy.json formatted.json
 ```
 
-## Example
-
-`python main.py messy.json formatted.json`
+Use a new destination filename. The input file remains unchanged.
 
 ## Tests
 
@@ -23,9 +28,19 @@ python main.py --help
 python -m unittest discover -s tests -v
 ```
 
-## Safety notes
+## Scope and limitations
 
-Use copies of important files. Review output before using it in production. Do not add credentials, private data, or real customer files to Git.
+This tool checks JSON syntax and formatting; it does not validate a domain-specific schema, verify business rules, or repair malformed input automatically. Review formatted output before integrating it into another system.
+
+## Related Quantix projects
+
+- [Mini JSON–CSV Converter](https://github.com/000MAK/mini-json-csv-converter)
+- [Mini CSV Cleaner](https://github.com/000MAK/mini-csv-cleaner)
+- [Quantix — 100 Mini Python Projects](https://github.com/000MAK/quantix-100-new-mini-projects)
+
+## Safety
+
+Use synthetic input in public examples and keep private records out of public repositories.
 
 ## License
 
